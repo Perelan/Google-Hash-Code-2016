@@ -6,6 +6,8 @@ class Main{
     public static void main(String[]args) throws IOException{
         //Map map;
         String[] products;
+        ArrayList<Warehouse> wHouses = new ArrayList<>();
+        ArrayList<Drones> lDrones = new ArrayList<>();
         int nrOfWareHouses = 0;
         int rows=0,colums=0,nrOfDrones=0,deadLine=0,maxLoad=0;
         try{
@@ -21,6 +23,11 @@ class Main{
                     nrOfDrones = Integer.parseInt(strArr[2]);
                     deadLine = Integer.parseInt(strArr[3]);
                     maxLoad = Integer.parseInt(strArr[4]);
+
+                    for(int i = 0; i < nrOfDrones; i++){
+                        lDrones.add(new Drone(i,null,0,0));
+                    }
+
                     lineNr++;
                 }else if(lineNr == 1){
                     //map.maxWeight(Integer.parseInt(read));
@@ -40,7 +47,13 @@ class Main{
                         System.out.println("Prods in wareHouse" + read);
                         String[] productsInWareHouse = read.split("\\s+");
                         read = fileScanner.nextLine();
+                        Warehouse nHouse = new Warehouse(Integer.parseInt(xy[0],Integer.parseInt(xy[1])));
                     }
+
+                    for(int i = 0; i < lDrones.size();i++){
+                        lDrones.get(i).insert_warehouse(wHouse);
+                    }
+                    
                     lineNr++;
                 }else{
                     //System.out.println(read);
