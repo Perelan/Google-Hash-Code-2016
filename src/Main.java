@@ -7,7 +7,7 @@ class Main{
         //Map map;
         String[] products;
         ArrayList<Warehouse> wHouses = new ArrayList<>();
-        ArrayList<Drones> lDrones = new ArrayList<>();
+        ArrayList<Drone> lDrones = new ArrayList<>();
         int nrOfWareHouses = 0;
         int rows=0,colums=0,nrOfDrones=0,deadLine=0,maxLoad=0;
         try{
@@ -40,20 +40,23 @@ class Main{
                     lineNr++;
                 }else if(lineNr == 4){ //adding warehouses
                     for(int i = 0;i < nrOfWareHouses;i++){
-                        System.out.println(i);
-                        System.out.println("warehous cord: " + read);
+
                         String[] xy = read.split("\\s+");
                         read = fileScanner.nextLine();
-                        System.out.println("Prods in wareHouse" + read);
+
                         String[] productsInWareHouse = read.split("\\s+");
+                        int[] prodList = new int[productsInWareHouse.length];
+                        for(int j = 0; j < prodList.length; j++){
+                            prodList[j] = Integer.parseInt(productsInWareHouse[j]);
+                        }
                         read = fileScanner.nextLine();
-                        Warehouse nHouse = new Warehouse(Integer.parseInt(xy[0],Integer.parseInt(xy[1])));
+                        Warehouse nHouse = new Warehouse(Integer.parseInt(xy[0]),Integer.parseInt(xy[1]),prodList);
                     }
 
                     for(int i = 0; i < lDrones.size();i++){
-                        lDrones.get(i).insert_warehouse(wHouse);
+                        lDrones.get(i).insert_warehouse(wHouses);
                     }
-                    
+
                     lineNr++;
                 }else{
                     //System.out.println(read);

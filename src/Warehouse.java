@@ -3,23 +3,23 @@ import java.util.*;
 public class Warehouse
 {
 
-    private ArrayList<Product> list;
+    private int[] list;
     private int column;
     private int row;
     private static int warehouse_id;
 
-    public Warehouse(int row, int column)
+    public Warehouse(int row, int column, int[] prodList)
     {
-        list = new ArrayList<>();
         this.row = row;
         this.column = column;
+        this.list = prodList;
         warehouse_id++;
     }
 
     /*Inser product in warehouse*/
     public void insert(Product product)
     {
-        list.add(product);
+        //list.add(product);
         //System.out.println(String.format("Product %s were inserted into %s", p.getProduct_id, warehouse_id));
     }
 
@@ -27,7 +27,7 @@ public class Warehouse
         return warehouse_id;
     }
 
-    public ArrayList<Product> getList(){
+    public int[] getList(){
         return list;
     }
 
