@@ -9,6 +9,8 @@ class Drone extends Thread
      private boolean ready   = false;
      private int row;
      private int column;
+     private Product product;   // What the drone is carrying - DRONE CAN ONLY CARRY ONE ITEM (ATM);
+     private ArrayList<Warehouse> wh;
 
      public Drone(int drone_id, String drone_cmd, int row, int column){
          this.drone_id  = drone_id;
@@ -32,11 +34,31 @@ class Drone extends Thread
          }
      }
 
-     public void load(){
-        //number of
-        
-
+     public void insert_item(Product p){
+         product = p;
      }
+
+     public void insert_warehouse(ArrayList<Warehouse> wh){
+         this.wh = wh;
+     }
+
+     public void load(){
+        //Check if drone is at a warehouse
+            // True: GET ITEM
+            // False: Fly to path
+        for(int i = 0; i < wh.size(); i++){
+            if(row == wh.get(i).row && column == wh.get(i).column){
+                break;// If true break list
+            }else{
+                int shortest;
+                
+            }
+        }
+        // Check if item is in the warehouse
+
+        // NOT NEEDED ATM: Check if drone can carry the package
+     }
+
 
      public void deliver(){
 
