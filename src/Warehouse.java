@@ -12,6 +12,6 @@ public class Warehouse {
 
     public void insert(Product p){
         list.add(p);
-        System.out.println(String.format("Product %s were inserted into %s", p.getProduct_id, warehouse_id));
+        //System.out.println(String.format("Product %s were inserted into %s", p.getProduct_id, warehouse_id));
     }
 }
