@@ -47,23 +47,25 @@ class Drone extends Thread
             // True: GET ITEM
             // False: Fly to path
         int shortest = 0;
-        Warehouse shorest_wh;
+        Warehouse shortest_wh = null;
 
         for(int i = 0; i < wh.size(); i++){
-            if(row == wh.get(i).row && column == wh.get(i).column){
+            if(row == wh.get(i).getRow() && column == wh.get(i).getColumn()){
                 break;// If true break list
             }else{
-                if(shortest >= find_distance(wh)){
-                    shortest = find_distance(wh);
+                if(shortest >= find_distance(wh.get(i))){
+                    shortest = find_distance(wh.get(i));
                     shortest_wh = wh.get(i);
                 }
             }
         }
 
-        if(shortest_wh.list.contains(product)){
-            System.out.println(String.format("The warehouse(%d) has the product(%d)!", shortest_wh.warehouse_id, product.product_id));
+
+        // Check if warehouse has 
+        if(shortest_wh.getList().contains(product)){
+            System.out.println(String.format("The warehouse(%d) has the product(%d)!", shortest_wh.getWarehouse_id(), product.getProduct_id()));
         }else{
-            System.out.println(String.format("The warehouse(%d) DO NOT have the product(%d)!", shortest_wh.warehouse_id, product.product_id));
+            System.out.println(String.format("The warehouse(%d) DO NOT have the product(%d)!", shortest_wh.getWarehouse_id(), product.getProduct_id()));
             return;
         }
         // NOT NEEDED ATM: Check if drone can carry the package
@@ -97,6 +99,6 @@ class Drone extends Thread
     }
 
      public int find_distance(Warehouse wh){
-         return Math.sqrt(((row - wh.row)*(row - wh.row)) + ((column - wh.column)*(colmn - wh.column)));
+         return (int) Math.sqrt(((row - wh.getRow())*(row - wh.getRow())) + ((column - wh.getColumn())*(column - wh.getColumn())));
      }
 }

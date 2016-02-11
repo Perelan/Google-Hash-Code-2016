@@ -22,4 +22,20 @@ public class Warehouse
         list.add(product);
         //System.out.println(String.format("Product %s were inserted into %s", p.getProduct_id, warehouse_id));
     }
+
+    public int getWarehouse_id(){
+        return warehouse_id;
+    }
+
+    public ArrayList<Product> getList(){
+        return list;
+    }
+
+    public int getRow(){
+        return row;
+    }
+
+    public int getColumn(){
+        return column;
+    }
 }//End class

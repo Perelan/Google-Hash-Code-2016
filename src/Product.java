@@ -22,7 +22,7 @@ class Product
           return delivery_status;
       }
 
-      public boolean setDeliveryStatus(boolean status)
+      public void setDeliveryStatus(boolean status)
       {
           delivery_status = status;
       }
