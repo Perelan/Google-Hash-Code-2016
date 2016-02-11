@@ -58,7 +58,7 @@ class Main{
                     }
 
                     lineNr++;
-                }else{
+                }
                     for(int i = 0; i < lDrones.size(); i++){
                         lDrones.get(i).start();
 
@@ -70,7 +70,6 @@ class Main{
                             }
 
                         }
-                    }
                     //System.out.println(read);
                 }
             }
