@@ -5,7 +5,7 @@ public class Order
     private ArrayList<Product> products;
     private int column;
     private int row;
-
+    private boolean isDelivered;
 
     /*Constructor*/
     public Order()
@@ -13,12 +13,12 @@ public class Order
         products = new ArrayList<Product>();
     }
 
-    public boolean makeOrder()
+    public boolean makeOrder(int row, int col)
     {
-
+        column = col;
+        this.row = row;
+        isDelivered = false; 
     }
-
-
     /*Add item to order*/
     public boolean addItem(Product productItem)
     {

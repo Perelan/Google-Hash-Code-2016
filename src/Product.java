@@ -23,6 +23,6 @@ class Product{
 
       public boolean setDeliveryStatus(boolean status)
       {
-          deliveryStatus = status; 
+          deliveryStatus = status;
       }
 }
