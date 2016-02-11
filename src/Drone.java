@@ -46,19 +46,29 @@ class Drone extends Thread
         //Check if drone is at a warehouse
             // True: GET ITEM
             // False: Fly to path
+        int shortest = 0;
+        Warehouse shorest_wh;
+
         for(int i = 0; i < wh.size(); i++){
             if(row == wh.get(i).row && column == wh.get(i).column){
                 break;// If true break list
             }else{
-                int shortest;
-                
+                if(shortest >= find_distance(wh)){
+                    shortest = find_distance(wh);
+                    shortest_wh = wh.get(i);
+                }
             }
         }
-        // Check if item is in the warehouse
 
+        if(shortest_wh.list.contains(product)){
+            System.out.println(String.format("The warehouse(%d) has the product(%d)!", shortest_wh.warehouse_id, product.product_id));
+        }else{
+            System.out.println(String.format("The warehouse(%d) DO NOT have the product(%d)!", shortest_wh.warehouse_id, product.product_id));
+            return;
+        }
         // NOT NEEDED ATM: Check if drone can carry the package
+        //TODO
      }
-
 
      public void deliver(){
 
