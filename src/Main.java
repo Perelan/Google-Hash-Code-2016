@@ -59,6 +59,18 @@ class Main{
 
                     lineNr++;
                 }else{
+                    for(int i = 0; i < lDrones.size(); i++){
+                        lDrones.get(i).start();
+
+                        synchronized(lDrones.get(i)){
+                            try{
+                                lDrones.get(i).wait();
+                            }catch(Exception e){
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }
                     //System.out.println(read);
                 }
             }
