@@ -16,7 +16,7 @@ public class Order
     }
 
     public boolean makeOrder(int row, int col)
-    {
+    {   
         column = col;
         this.row = row;
         isDelivered = false;
@@ -45,7 +45,7 @@ public class Order
         return products.size();
     }
 
-    public boolean isDelivered(boolean status)
+    public void isDelivered(boolean status)
     {
         isDelivered = status;
     }

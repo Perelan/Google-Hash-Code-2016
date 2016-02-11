@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class Warehouse {
+public class Warehouse
+{
 
     private ArrayList<Product> list;
     private int column;
@@ -15,9 +16,10 @@ public class Warehouse {
         warehouse_id++;
     }
 
+    /*Inser product in warehouse*/
     public void insert(Product product)
     {
         list.add(product);
         //System.out.println(String.format("Product %s were inserted into %s", p.getProduct_id, warehouse_id));
     }
-}
+}//End class
