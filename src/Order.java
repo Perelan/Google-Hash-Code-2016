@@ -6,7 +6,7 @@ public class Order
     private int column;
     private int row;
     private boolean isDelivered;
-    private static int order_id;
+    private static int order_id = -1;
 
     /*Constructor*/
     public Order()
@@ -15,8 +15,8 @@ public class Order
         order_id++;
     }
 
-    public boolean makeOrder(int row, int col)
-    {   
+    public void makeOrder(int row, int col)
+    {
         column = col;
         this.row = row;
         isDelivered = false;

@@ -60,15 +60,7 @@ class Drone extends Thread
         this.row = shortest_wh.getRow();
         this.column = shortest_wh.getColumn();
 
-        // Check if warehouse has item
-        if(shortest_wh.getList().contains(product)){
-            System.out.println(String.format("The warehouse(%d) has the product(%d)!", shortest_wh.getWarehouse_id(), product.getProduct_id()));
-        }else{
-            System.out.println(String.format("The warehouse(%d) DO NOT have the product(%d)!", shortest_wh.getWarehouse_id(), product.getProduct_id()));
-            return;
-        }
-        // NOT NEEDED ATM: Check if drone can carry the package
-        //TODO
+    
      }
 
      public void deliver(){

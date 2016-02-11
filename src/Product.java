@@ -1,6 +1,6 @@
 class Product
 {
-      private static int product_id;
+      private static int product_id = -1;
       private int product_weight;
       private boolean delivery_status;
 
