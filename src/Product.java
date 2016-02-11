@@ -11,7 +11,7 @@ class Product{
         return product_id;
       }
 
-      public Int getProduct_weight(){
+      public int getProduct_weight(){
         return product_weight;
       }
 }
