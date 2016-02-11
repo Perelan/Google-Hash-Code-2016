@@ -6,11 +6,13 @@ public class Order
     private int column;
     private int row;
     private boolean isDelivered;
+    private static int order_id;
 
     /*Constructor*/
     public Order()
     {
         products = new ArrayList<Product>();
+        order_id++;
     }
 
     public boolean makeOrder(int row, int col)

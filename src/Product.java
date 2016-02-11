@@ -1,12 +1,12 @@
 class Product
 {
-      private int product_id;
+      private static int product_id;
       private int product_weight;
       private boolean delivery_status;
 
-      public Product(int product_id, int product_weight){
-        this.product_id = product_id;
+      public Product(int product_weight){
         this.product_weight = product_weight;
+        product_id++;
       }
 
       public int getProduct_id(){
