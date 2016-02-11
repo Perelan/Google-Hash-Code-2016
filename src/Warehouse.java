@@ -10,7 +10,7 @@ public class Warehouse {
         list = new ArrayList<>();
     }
 
-    public void sett_inn(Product p){
+    public void insert(Product p){
         list.add(p);
         System.out.println(String.format("Product %s were inserted into %s", p.getProduct_id, warehouse_id));
     }
