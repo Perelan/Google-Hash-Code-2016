@@ -21,6 +21,6 @@ public class Map
     }
 
     public ArrayList<Drone> getList(){
-        return list;
+        return drone_list;
     }
 }//End class
