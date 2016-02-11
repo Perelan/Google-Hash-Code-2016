@@ -42,4 +42,14 @@ public class Order
     {
         return products.size();
     }
+
+    public boolean isDelivered(boolean status)
+    {
+        isDelivered = status;
+    }
+
+    public boolean getDeliveryStatus()
+    {
+        return isDelivered;
+    }
 }//End class

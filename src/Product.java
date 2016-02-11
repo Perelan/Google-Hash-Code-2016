@@ -1,7 +1,8 @@
-class Product{
+class Product
+{
       private int product_id;
       private int product_weight;
-      private boolean deliveryStatus;
+      private boolean delivery_status;
 
       public Product(int product_id, int product_weight){
         this.product_id = product_id;
@@ -18,11 +19,11 @@ class Product{
 
       public boolean getDeliveryStatus()
       {
-          return deliveryStatus;
+          return delivery_status;
       }
 
       public boolean setDeliveryStatus(boolean status)
       {
-          deliveryStatus = status;
+          delivery_status = status;
       }
 }
