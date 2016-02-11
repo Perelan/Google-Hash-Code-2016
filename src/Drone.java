@@ -47,21 +47,24 @@ class Drone extends Thread
             // True: GET ITEM
             // False: Fly to path
         int shortest = 0;
-        Warehouse shortest_wh = null;
+        Warehouse shortest_wh = null; // Store the warehouse closes to the drone
 
         for(int i = 0; i < wh.size(); i++){
             if(row == wh.get(i).getRow() && column == wh.get(i).getColumn()){
                 break;// If true break list
             }else{
-                if(shortest >= find_distance(wh.get(i))){
+                if(shortest > find_distance(wh.get(i))){
                     shortest = find_distance(wh.get(i));
                     shortest_wh = wh.get(i);
                 }
             }
         }
 
+        // Change drone position;
+        this.row = shortest_wh.getRow();
+        this.column = shortest_wh.getColumn();
 
-        // Check if warehouse has 
+        // Check if warehouse has item
         if(shortest_wh.getList().contains(product)){
             System.out.println(String.format("The warehouse(%d) has the product(%d)!", shortest_wh.getWarehouse_id(), product.getProduct_id()));
         }else{
@@ -73,7 +76,7 @@ class Drone extends Thread
      }
 
      public void deliver(){
-
+         
      }
 
      public int getDrone_ID(){
