@@ -10,10 +10,6 @@ public class Map
     private int deadLine;
     private ArrayList<Drone> drone_list;
 
-    public void run()
-    {
-        // Execute a command. - In main class call: object.start()
-    }
 
     public Map(int row, int col, int nrOfDrones,int deadLine, int maxLoad){
         this.grid = new int[row - 1][col - 1];

@@ -23,13 +23,9 @@ class Drone extends Thread
          System.out.println("Starting: " + Thread.currentThread().getName() + "Drone-id: " + drone_id);
          synchronized(this){
             // Execute drone COMMAND here!
-            if(drone_cmd.equalsIgnoreCase("load")){
-                load();
-            }else if(drone_cmd.equalsIgnoreCase("deliver")){
-                deliver();
-            }else{
-                System.out.println(String.format("Drone(%d) had an invaild command!", drone_id));
-            }
+            load();
+            deliver();
+
             notify(); //Notify main when task is completed
          }
      }
@@ -76,7 +72,7 @@ class Drone extends Thread
      }
 
      public void deliver(){
-         
+
      }
 
      public int getDrone_ID(){
