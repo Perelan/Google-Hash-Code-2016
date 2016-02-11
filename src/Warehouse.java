@@ -5,12 +5,14 @@ public class Warehouse {
     private ArrayList<Product> list;
     private int column;
     private int row;
+    private static int warehouse_id;
 
     public Warehouse(int row, int column)
     {
         list = new ArrayList<>();
         this.row = row;
         this.column = column;
+        warehouse_id++;
     }
 
     public void insert(Product product)
